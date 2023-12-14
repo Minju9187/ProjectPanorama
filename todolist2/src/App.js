@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import TodoBoard from "./components/TodoBoard";
+import GlobalStyle from "./GlobalStyle";
 
 //1. 인풋창이 있고 버튼이 있다.
 //2. 인풋창에 값을 입력하고 버튼을 클릭하면 아이템이 추가가 된다.
@@ -21,15 +22,22 @@ function App() {
   };
 
   return (
-    <main>
-      <input
-        value={inputValue}
-        type="text"
-        onChange={(e) => setInputValue(e.target.value)}
-      />
-      <button onClick={addItem}>추가</button>
-      <TodoBoard todoList={todoList} deleteItem={deleteItem} />
-    </main>
+    <div className="center">
+      <GlobalStyle />
+      <main className="container">
+        <h1 className="title">Todo List</h1>
+        <div className="addContainer">
+          <input
+            className="addInput"
+            value={inputValue}
+            type="text"
+            onChange={(e) => setInputValue(e.target.value)}
+          />
+          <button onClick={addItem}>추가</button>
+        </div>
+        <TodoBoard todoList={todoList} deleteItem={deleteItem} />
+      </main>
+    </div>
   );
 }
 export default App;
