@@ -3,3 +3,10 @@
   height: 50px;
   border: 1px solid lightblue;
 }
+
+.todo-deleteButton {
+  width: 60px;
+  height: 40px;
+  cursor: pointer;
+  border: 1px solid lightblue;
+}

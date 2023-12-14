@@ -1,4 +1,4 @@
-import react, { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import TodoBoard from "./components/TodoBoard";
 
@@ -12,6 +12,12 @@ function App() {
 
   const addItem = () => {
     setTodoList([...todoList, inputValue]);
+    setInputValue("");
+  };
+
+  const deleteItem = (index) => {
+    const newTodoList = todoList.filter((item, idx) => idx !== index);
+    setTodoList(newTodoList);
   };
 
   return (
@@ -22,7 +28,7 @@ function App() {
         onChange={(e) => setInputValue(e.target.value)}
       />
       <button onClick={addItem}>추가</button>
-      <TodoBoard todoList={todoList} />
+      <TodoBoard todoList={todoList} deleteItem={deleteItem} />
     </main>
   );
 }

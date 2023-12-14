@@ -6,7 +6,11 @@ export default function TodoBoard(props) {
     <>
       <h1>Todo List</h1>
       {props.todoList.map((item, idx) => (
-        <TodoItem item={item} key={idx} />
+        <TodoItem
+          item={item}
+          key={idx}
+          deleteItem={() => props.deleteItem(idx)}
+        />
       ))}
     </>
   );
