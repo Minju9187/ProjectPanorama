@@ -1,11 +1,11 @@
 import React from "react";
-import TodoItem from "./TodoItem";
+import TodoItem2 from "./TodoItem2";
 
-export default function TodoBoard(props) {
+export default function TodoBoard2(props) {
   return (
     <>
       {props.todoList.map((item, idx) => (
-        <TodoItem
+        <TodoItem2
           item={item}
           key={idx}
           deleteItem={() => props.deleteItem(idx)}

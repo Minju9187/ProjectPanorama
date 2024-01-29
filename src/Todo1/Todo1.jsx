@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
-import "./App.css";
+import "./Todo1.css";
 
-function App() {
+export default function Todo1() {
   const [todoList, setTodoList] = useState([]);
   const [sequance, setSequance] = useState(null);
   const refTodoItem = useRef();
@@ -96,4 +96,3 @@ function App() {
     </div>
   );
 }
-export default App;
